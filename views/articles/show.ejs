@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Blog</title>
+</head>
+<body>
+    <div class="container">
+      <h1 class="mb-4"><%= article.title %></h1>
+      <div class="text-muted mb-2">
+          <%= article.createdAt.toLocaleDateString() %>
+        </div>
+        <a href="/home" class="btn btn-secondary">All Article</a>
+        <% if(article.userId == user._id){ %> 
+            <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+        <% } %> 
+        <div>
+        <%= article.markdown %> 
+        </div>
+    </div>
+</body>
+</html>
